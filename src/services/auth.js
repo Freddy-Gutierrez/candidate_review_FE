@@ -1,8 +1,9 @@
 import http from "./http";
+import config from "../config/default.json";
 import jwtDecode from "jwt-decode";
 import { toast } from "react-toastify";
 
-const usersEndpoint = "/users";
+const usersEndpoint = config.usersURL;
 const tokenKey = "token";
 const strLogin = "/login";
 const strCandidates = "/candidates";
