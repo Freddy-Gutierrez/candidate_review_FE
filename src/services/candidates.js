@@ -3,8 +3,8 @@ import config from "../config/default.json";
 import { getJwt } from "./auth";
 import { toast } from "react-toastify";
 
-const candidatesEndpoint = config.candidatesURL;
-const commentsEndpoint = config.commentsURL;
+const candidatesEndpoint = "/candidates";
+const commentsEndpoint = "/comments";
 const axiosConfig = { headers: { "x-auth-token": getJwt() } };
 let candidates = [];
 let candidate = {};
