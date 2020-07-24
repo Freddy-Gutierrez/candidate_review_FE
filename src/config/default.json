@@ -1,0 +1,5 @@
+{
+  "usersURL": "https://candidate-review-be.herokuapp.com/api/users",
+  "candidatesURL": "https://candidate-review-be.herokuapp.com/api/candidates",
+  "commentsURL": "https://candidate-review-be.herokuapp.com/api/comments"
+}
