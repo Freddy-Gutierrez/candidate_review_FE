@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-// here axios.intercepter is handling an unexpected error globally s
+// here axios.intercepter is handling an unexpected error globally
 axios.interceptors.response.use(null, (error) => {
   const expectedError =
     error.response &&
