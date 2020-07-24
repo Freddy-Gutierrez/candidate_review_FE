@@ -1,8 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
-
 // here axios.intercepter is handling an unexpected error globally s
 axios.interceptors.response.use(null, (error) => {
   const expectedError =
