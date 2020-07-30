@@ -43,52 +43,54 @@ class Feedback extends Component {
         className="img-background"
         style={{ backgroundImage: `url(${"/colored_pencils.jpg"})` }}
       >
-        <span style={{ display: "inline-block" }}>
-          <h1>Feedback</h1>
-          <table width="100%">
-            <tbody>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Specialties</th>
-                <th>Presentation</th>
-                <th>Rating</th>
-              </tr>
-              <tr>
-                <td>{candidate._id}</td>
-                <td>{candidate.name}</td>
-                <td>{candidate.specialties}</td>
-                <td>{candidate.presentation}</td>
-                <td>{candidate.rating}</td>
-              </tr>
-            </tbody>
-          </table>
-          <div>
-            <br />
-            {candidate.comments.length !== 0 ? (
-              <Comments candidate={candidate} user={user} />
+        <div className="parent-card">
+          <div className="card" style={{ fontSize: "1.15rem" }}>
+            <h1>Feedback</h1>
+            <table>
+              <tbody>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Specialties</th>
+                  <th>Presentation</th>
+                  <th>Rating</th>
+                </tr>
+                <tr>
+                  <td>{candidate._id}</td>
+                  <td>{candidate.name}</td>
+                  <td>{candidate.specialties}</td>
+                  <td>{candidate.presentation}</td>
+                  <td>{candidate.rating}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <br />
+              {candidate.comments.length !== 0 ? (
+                <Comments candidate={candidate} user={user} />
+              ) : (
+                ""
+              )}
+            </div>
+            {user ? (
+              <div>
+                <p>Please give your feedback:</p>
+                <FeedbackForm
+                  onChange={this.handleChange}
+                  onSubmit={this.handleSubmit}
+                  radioButtons={[1, 2, 3, 4, 5]}
+                  nameValue={name}
+                  commentValue={comment}
+                  radioValue={parseInt(rating)}
+                />
+              </div>
             ) : (
               ""
             )}
+            <Link to="/candidates">Back to candidates</Link>
+            <ToastContainer />
           </div>
-          {user ? (
-            <div>
-              <p>Please give your feedback:</p>
-              <FeedbackForm
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-                radioButtons={[1, 2, 3, 4, 5]}
-                nameValue={name}
-                commentValue={comment}
-                radioValue={parseInt(rating)}
-              />
-            </div>
-          ) : (
-            ""
-          )}
-          <Link to="/candidates">Back to candidates</Link>
-        </span>
-        <ToastContainer />
+        </div>
       </div>
     );
   }

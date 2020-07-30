@@ -24,11 +24,11 @@ class SignUp extends Component {
   render() {
     if (getCurrentUser()) return <Redirect to="/candidates" />;
     return (
-      <div className="row">
-        <div className="column-75">
+      <div className="parent-home">
+        <div className="sidebar">
           <img src="/login.jpg" alt="Login" className="img-home" />
         </div>
-        <div className="column-25">
+        <div className="content">
           <span className="span-signup">
             <h3>Sign Up</h3>
             <form onSubmit={this.handleSubmit}>

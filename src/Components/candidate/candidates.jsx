@@ -9,20 +9,22 @@ import "../../CSS/layouts.css";
 class Candidates extends Component {
   render() {
     return (
-      <div
-        className="img-background"
-        style={{ backgroundImage: `url(${"/candidates.jpg"})` }}
-      >
-        <div>
-          <span className="span-candidates">
-            <Header />
-            <h1>Candidates</h1>
-            <CandidatesTable />
-            <Link to="/add-candidate" style={isVisible(getCurrentUser())}>
-              Add Candidate
-            </Link>
-            <ToastContainer />
-          </span>
+      <div>
+        <div
+          className="img-background"
+          style={{ backgroundImage: `url(${"/candidates.jpg"})` }}
+        >
+          <div className="parent-card">
+            <div className="card">
+              <Header />
+              <h1>Candidates</h1>
+              <CandidatesTable />
+              <Link to="/add-candidate" style={isVisible(getCurrentUser())}>
+                Add Candidate
+              </Link>
+              <ToastContainer />
+            </div>
+          </div>
         </div>
       </div>
     );

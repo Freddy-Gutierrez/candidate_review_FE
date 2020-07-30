@@ -24,22 +24,26 @@ class AddCandidate extends Component {
   render() {
     const { name, specialties, presentation } = this.state.data;
     return (
-      <div
-        className="img-background"
-        style={{ backgroundImage: `url(${"/lockers.jpg"})` }}
-      >
-        <span className="span-container">
-          <h1>Add Candidate</h1>
-          <Table
-            inputs={["Name", "Specialties", "Presentation"]}
-            values={[name, specialties, presentation]}
-            action="Add"
-            onSubmit={this.handleSubmit}
-            onChange={this.handleChange}
-          />
-          <ToastContainer />
-          <Link to="/candidates">Back to candidates</Link>
-        </span>
+      <div>
+        <div
+          className="img-background"
+          style={{ backgroundImage: `url(${"/lockers.jpg"})` }}
+        >
+          <div className="parent-card" style={{ height: "100vh" }}>
+            <div className="card">
+              <h1>Add Candidate</h1>
+              <Table
+                inputs={["Name", "Specialties", "Presentation"]}
+                values={[name, specialties, presentation]}
+                action="Add"
+                onSubmit={this.handleSubmit}
+                onChange={this.handleChange}
+              />
+              <ToastContainer />
+              <Link to="/candidates">Back to candidates</Link>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

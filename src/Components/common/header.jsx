@@ -23,7 +23,7 @@ class Header extends Component {
   render() {
     const { user } = this.state;
     return (
-      <div style={{ marginLeft: "auto", marginRight: "auto" }}>
+      <div>
         {user ? (
           <div>
             <h4 style={{ float: "left" }}>{`Welcome ${user.username}`} </h4>

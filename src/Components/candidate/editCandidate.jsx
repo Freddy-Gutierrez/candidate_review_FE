@@ -29,22 +29,26 @@ class EditCandidate extends Component {
   render() {
     const { _id, name, specialties, presentation } = this.state.candidate;
     return (
-      <div
-        className="img-background"
-        style={{ backgroundImage: `url(${"/paint_brush.jpg"})` }}
-      >
-        <span className="span-container">
-          <h1>Edit Candidate</h1>
-          <Table
-            inputs={["ID", "Name", "Specialties", "Presentation"]}
-            values={[_id, name, specialties, presentation]}
-            action="Save"
-            onSubmit={this.handleSubmit}
-            onChange={this.handleChange}
-          />
-          <ToastContainer />
-          <Link to="/candidates">Back to candidates</Link>
-        </span>
+      <div>
+        <div
+          className="img-background"
+          style={{ backgroundImage: `url(${"/paint_brush.jpg"})` }}
+        >
+          <div className="parent-card" style={{ height: "100vh" }}>
+            <div className="card">
+              <h1>Edit Candidate</h1>
+              <Table
+                inputs={["ID", "Name", "Specialties", "Presentation"]}
+                values={[_id, name, specialties, presentation]}
+                action="Save"
+                onSubmit={this.handleSubmit}
+                onChange={this.handleChange}
+              />
+              <ToastContainer />
+              <Link to="/candidates">Back to candidates</Link>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

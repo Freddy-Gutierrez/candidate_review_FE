@@ -42,24 +42,23 @@ class EditComment extends Component {
         className="img-background"
         style={{ backgroundImage: `url(${"/books.jpg"})` }}
       >
-        <span
-          className="span-container"
-          style={{ float: "right", marginRight: "10%" }}
-        >
-          <h1>Edit Comment</h1>
-          <FeedbackForm
-            onChange={this.handleChange}
-            onSubmit={this.handleSubmit}
-            radioButtons={[1, 2, 3, 4, 5]}
-            nameValue={name}
-            commentValue={comment}
-            radioValue={parseInt(rating)}
-          />
-          <ToastContainer />
-          <Link to={`/feedback/${this.props.match.params.id}`}>
-            Back to candidate
-          </Link>
-        </span>
+        <div className="parent-card" style={{ height: "100vh" }}>
+          <div className="card">
+            <h1>Edit Comment</h1>
+            <FeedbackForm
+              onChange={this.handleChange}
+              onSubmit={this.handleSubmit}
+              radioButtons={[1, 2, 3, 4, 5]}
+              nameValue={name}
+              commentValue={comment}
+              radioValue={parseInt(rating)}
+            />
+            <ToastContainer />
+            <Link to={`/feedback/${this.props.match.params.id}`}>
+              Back to candidate
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React from "react";
 const Table = (props) => {
   return (
     <div>
-      <table style={{ marginLeft: "auto", marginRight: "auto" }}>
+      <table>
         <tbody>
           {props.inputs.map((i, ind) => {
             return (
